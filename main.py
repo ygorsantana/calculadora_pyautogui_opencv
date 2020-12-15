@@ -11,21 +11,38 @@ def get_total():
     return [x, y, 292, 30]
 
 
-conta = input()
 try:
     clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\C.png")
-    pyautogui.click(clear.x, clear.y)
+    clear.x
 except:
     try:
         clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\CE.png")
-        pyautogui.click(clear.x, clear.y)
+        clear.x
     except:
         print('ATTENTION!!! Windows calculator need to be on screen before you run the script.')
         exit(0)
 
+pyautogui.click(clear.x, clear.y)
+
+print(
+    '''
+For usage, you can digit some expressions like:
+10+5
+20-3
+30 x 20
+30 * 10
+30 / 5
+
+Now, type your expression:'''
+)
+conta = input()
 for char in list(conta):
     if not char or char == ' ':
         continue
+    elif char == '/':
+        char = 'dividir'
+    elif char == '*':
+        char = 'x'
     box = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\{char}.png")
     pyautogui.click(box.x, box.y)
 
