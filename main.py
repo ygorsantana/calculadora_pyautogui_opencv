@@ -14,8 +14,7 @@ def get_total():
 clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\C.png")
 pyautogui.click(clear.x, clear.y)
 
-# conta = input()
-conta = '10 + 5'
+conta = input()
 for char in list(conta):
     if not char or char == ' ':
         continue
