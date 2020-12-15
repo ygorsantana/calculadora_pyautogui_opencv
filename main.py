@@ -11,10 +11,14 @@ def get_total():
     return [x, y, 292, 30]
 
 
-clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\C.png")
-pyautogui.click(clear.x, clear.y)
-
 conta = input()
+try:
+    clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\C.png")
+    pyautogui.click(clear.x, clear.y)
+except:
+    print('ATTENTION!!! Windows calculator need to be on screen before you run the script.')
+    exit(0)
+
 for char in list(conta):
     if not char or char == ' ':
         continue
