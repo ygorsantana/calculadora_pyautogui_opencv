@@ -16,8 +16,12 @@ try:
     clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\C.png")
     pyautogui.click(clear.x, clear.y)
 except:
-    print('ATTENTION!!! Windows calculator need to be on screen before you run the script.')
-    exit(0)
+    try:
+        clear = pyautogui.locateCenterOnScreen(f".\\images\\calculador\\CE.png")
+        pyautogui.click(clear.x, clear.y)
+    except:
+        print('ATTENTION!!! Windows calculator need to be on screen before you run the script.')
+        exit(0)
 
 for char in list(conta):
     if not char or char == ' ':
